@@ -12,10 +12,26 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "tsTopo", "title": "TS-Topo", "icon": "resources/icon.svg" }
+      ]
+    },
+    "views": {
+      "tsTopo": [
+        {"id": "tsTopoTreeView", "name": "Map View", "icon": "resources/icon.svg", "type": "tree"}
+      ]
+    },
     "commands": [
       {
         "command": "ts-topo.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "ts-topo.refresh", "title": "Refresh TS Topo"
+      },
+      {
+        "command": "ts-topo.openView", "title": "Open TS Topo View"
       }
     ]
   },
@@ -36,7 +52,6 @@
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.36.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.12"
+    "typescript": "^5.9.3"
   }
 }
